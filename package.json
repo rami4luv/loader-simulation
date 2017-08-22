@@ -7,7 +7,8 @@
   "scripts": {
     "prebuild": "jshint && mkdirp docs && cp index.html docs/",
     "test": "jshint index.js",
-    "build": "browserify index.js -o docs/bundle.js && node-sass style.scss docs/style.css"
+    "build": "browserify index.js -o docs/bundle.js && node-sass style.scss docs/style.css",
+    "postbuild": "uglifyjs docs/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/rami4luv/loader-simulation#readme",
   "devDependencies": {
+    "uglify-js": "latest",
     "jshint": "latest",
     "simulate-progress": "zeropaper/xt-simulate-progress",
     "browserify": "^14.4.0",

@@ -1,17 +1,21 @@
-.loader {
-  background-color: #999;
-  max-width: 310px;
-  height: 24px;
-  border-radius: 10px;
-  border: 1px solid #999;
-  .progress{
-    width: 0;
-    max-width: 296px;
-    background-color: #333;
-    margin: 2px;
-    border-radius: 10px;
+.loader{
+ display: block;
+ background-color: #999;
+ max-width: 300px ;
+ height: 24px;
+ border: 1px solid #999;
+ border-radius: 10px;
+ margin-top: 50px;
+ .progress{
+   height: 20px;
+   display: block;
+   width: 0%;
+   max-width: 296px;
+   background-color: #333;
+   margin: 2px;
+   border-radius: 10px;
+   &.finished{
+     background-color: green;
+   }
+ }
   }
-}
-.finished {
-  background-color: green;
-}

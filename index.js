@@ -1,22 +1,40 @@
 /* jshint browserify: true */
 var simulateProgress = require('simulate-progress');
+var element;
+var buttons = document.querySelectorAll('button');
+
+buttons.forEach(function(button){
+  button.addEventListener('click', function(){
+     
+console.log(this.parentNode);
+
+element = this.parentNode.childNodes[1];
+     startSimulation();
+  });
+});
+
+
+
+
+
 function progressCallback(percent) {
-  var element = document.querySelector('.progress');
-  element.style.width = percent;
+  
+  element.style.width = percent + "%";
 }
 
 function finishCallback() {
-  var element = document.querySelector('.loader');
-  element.classList.addClass('finished');
+  
+  element.classList.add('finished');
 }
 
 function startSimulation() {
-  var element = document.querySelector('.loader');
-  element.classList.removeClass('finished');
+  
+  element.classList.remove('finished');
+  simulateProgress(progressCallback, finishCallback);
 }
 
 function simulateProgress(progressCallback, finishCallback) {
 
 }
 
-startSimulation();
+
