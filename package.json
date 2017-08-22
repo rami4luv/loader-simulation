@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "jshint && mkdirp docs && cp index.html docs/",
-    "test": "shint index.js",
+    "test": "jshint index.js",
     "build": "browserify index.js -o docs/bundle.js && node-sass style.scss docs/style.css"
   },
   "repository": {
