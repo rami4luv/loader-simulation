@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prebuild": "mkdirp docs && cp index.html docs/",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "jshint && mkdirp docs && cp index.html docs/",
+    "test": "shint index.js",
     "build": "browserify index.js -o docs/bundle.js && node-sass style.scss docs/style.css"
   },
   "repository": {
@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/rami4luv/loader-simulation#readme",
   "devDependencies": {
+    "jshint": "latest",
+    "simulate-progress": "zeropaper/xt-simulate-progress",
     "browserify": "^14.4.0",
     "cp": "^0.2.0",
     "mkdirp": "^0.5.1",
